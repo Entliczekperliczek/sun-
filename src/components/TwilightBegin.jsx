@@ -8,10 +8,10 @@ const cities = [
   { name: "Brasilia", lat: 15.82, lng: 47.9 }
 ];
 
-export default class SunriseView extends Component {
+export default class TwilightBegin extends Component {
   state = {
-    sunriseData: {
-      sunriseTime: ""
+    TwilightData: {
+      twilightbegin: ""
     }
   };
 
@@ -22,17 +22,17 @@ export default class SunriseView extends Component {
       `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}`
     );
     const parsedData = await response.json();
-    const sunriseTime = parsedData.results.sunrise;
+    const twilightTime = parsedData.results.civil_twilight_begin;
     this.setState({
-      sunriseData: {
-        sunriseTime: sunriseTime
+      TwilightData: {
+        twilightbegin: twilightTime
       }
     });
   };
 
   render() {
     console.log("is this consol log here?", this.state);
-    const time = this.state.sunriseData.sunriseTime;
-    return <div>{time}</div>;
+    const civiltwilight = this.state.TwilightData.twilightbegin;
+    return <div>{civiltwilight}</div>;
   }
 }
