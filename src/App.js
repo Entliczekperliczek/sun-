@@ -1,12 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-function App() {
-  return (
-    <div className="App">
-      <Navbar></Navbar>
-    </div>
-  );
+import SunriseView from "../src/components/SunriseView";
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar></Navbar>
+        <SunriseView></SunriseView>
+      </div>
+    );
+  }
 }
 
 export default App;
