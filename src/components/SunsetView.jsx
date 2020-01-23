@@ -1,13 +1,5 @@
 import React, { Component } from "react";
 
-const cities = [
-  { name: "Amsterdam", lat: 52.4, lng: 4.9 },
-  { name: "Paris", lat: 48.9, lng: 2.35 },
-  { name: "Tokyo", lat: 35.68, lng: 139.76 },
-  { name: "Warsaw", lat: 52.22, lng: 21.0 },
-  { name: "Brasilia", lat: 15.82, lng: 47.9 }
-];
-
 export default class SunsetView extends Component {
   state = {
     sunsetData: {
@@ -16,8 +8,8 @@ export default class SunsetView extends Component {
   };
 
   componentDidMount = async () => {
-    const latitude = cities[2].lat;
-    const longitude = cities[2].lng;
+    const latitude = this.props.data.lat;
+    const longitude = this.props.data.lng;
     const response = await fetch(
       `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}`
     );

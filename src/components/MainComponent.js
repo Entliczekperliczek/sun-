@@ -4,6 +4,8 @@ import SunsetView from "./SunsetView";
 import Daylenght from "./Daylength";
 import TwilightBegin from "./TwilightBegin";
 import TwilightEnd from "./TwilightEnd";
+import Buttons from "./Buttons";
+import { Link } from "react-router-dom";
 
 const cities = [
   { name: "Amsterdam", lat: 52.4, lng: 4.9 },
@@ -26,20 +28,38 @@ const cities = [
   { name: "Bangkok", lat: 13.75, lng: 100.5 },
   { name: "Hong Kong", lat: 22.31, lng: 114.16 }
 ];
-
 class MainComponent extends Component {
   state = {
-    currentCity: "Tokyo"
+    currentCity: ""
+  };
+
+  changeCity = cityName => {
+    console.log("changed to city", cityName);
+    const cityObjinArr = cities.filter((city, index) => {
+      console.log(" ??", cityName, city);
+
+      if (city.name == cityName) {
+        console.log("got her");
+
+        return cities[index];
+      }
+    });
+    console.log("found", cityObjinArr);
+
+    this.setState({ currentCity: cityObjinArr[0] });
   };
 
   render() {
+    if (this.state.currentCity === "") {
+      return <Buttons changeCity={this.changeCity}></Buttons>;
+    }
     return (
       <div>
-        <SunriseView></SunriseView>
-        <SunsetView></SunsetView>
-        <Daylenght></Daylenght>
-        <TwilightBegin></TwilightBegin>
-        <TwilightEnd></TwilightEnd>
+        <SunriseView data={this.state.currentCity}></SunriseView>
+        <SunsetView data={this.state.currentCity}></SunsetView>
+        <Daylenght data={this.state.currentCity}></Daylenght>
+        <TwilightBegin data={this.state.currentCity}></TwilightBegin>
+        <TwilightEnd data={this.state.currentCity}></TwilightEnd>
       </div>
     );
   }

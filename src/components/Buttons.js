@@ -22,33 +22,25 @@ const cities = [
   { name: "Hong Kong", lat: 22.31, lng: 114.16 }
 ];
 
-class Buttons extends Component {
-  changeCity = cityName => {
-    this.setState({ currentCity: cityName }, () => {
-      this.fetchCityWeatherData();
-    });
+export default class Buttons extends Component {
+  state = {
+    currentCity: ""
+  };
+  handleClick = event => {
+    console.log("handle click is pressed ", event.target.name);
+    this.props.changeCity(event.target.name);
   };
 
   render() {
     console.log("is this consol log here?", this.state);
-    return <div></div>;
+    return (
+      <div>
+        {cities.map(city => (
+          <button onClick={this.handleClick} name={city.name}>
+            {city.name}
+          </button>
+        ))}
+      </div>
+    );
   }
 }
-
-export default Buttons;
-
-//   render() {
-//     console.log("is this consol log here?", this.state);
-//     const civiltwilightend = this.state.TwilightData.twilightend;
-//     return (
-//       <div>
-//         {cities.map(city => (
-//           <button onClick={() => this.changeCity(city.name)}>
-//             {city.name}
-//           </button>
-//         ))}
-//         {civiltwilightend}
-//       </div>
-//     );
-//   }
-// }
