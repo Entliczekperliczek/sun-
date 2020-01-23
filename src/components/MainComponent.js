@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import SunriseView from "./SunriseView";
-import SunsetView from "./SunsetView";
-import Daylenght from "./Daylength";
-import TwilightBegin from "./TwilightBegin";
-import TwilightEnd from "./TwilightEnd";
 import Buttons from "./Buttons";
-import { Link } from "react-router-dom";
+import Data from "./Data";
 
 const cities = [
   { name: "Amsterdam", lat: 52.4, lng: 4.9 },
@@ -55,11 +50,7 @@ class MainComponent extends Component {
     }
     return (
       <div>
-        <SunriseView data={this.state.currentCity}></SunriseView>
-        <SunsetView data={this.state.currentCity}></SunsetView>
-        <Daylenght data={this.state.currentCity}></Daylenght>
-        <TwilightBegin data={this.state.currentCity}></TwilightBegin>
-        <TwilightEnd data={this.state.currentCity}></TwilightEnd>
+        <Data data={this.state.currentCity}></Data>
       </div>
     );
   }
