@@ -16,11 +16,12 @@ export default class LikeCounter extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="likes">
         <p>
-          This app has <b>{this.state.numLikes}</b> likes!
+          Do you like what the sun and the moon offer to you ? or not ?{" "}
+          <b>{this.state.numLikes}</b> likes!{" "}
           <button onClick={this.incrementLike}>Like</button>
-          This app has <b>{this.state.numUnlikes}</b> Unlikes!
+          <b>{this.state.numUnlikes}</b> Unlikes!
           <button onClick={this.incrementUnlike}>Unlike</button>
         </p>
       </div>

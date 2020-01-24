@@ -11,9 +11,10 @@ class Data extends Component {
     }
   };
 
-  componentDidMount = async () => {
-    const latitude = this.props.data.lat;
-    const longitude = this.props.data.lng;
+  componentDidUpdate = async prevProps => {
+    if (this.props.currentCity === prevProps.currentCity) return;
+    const latitude = this.props.currentCity.lat;
+    const longitude = this.props.currentCity.lng;
     const response = await fetch(
       `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}`
     );
@@ -42,7 +43,16 @@ class Data extends Component {
     const lenghtOfDay = this.state.data.daylenght;
     return (
       <div>
-        {civiltwilight} {civiltwilightTwo} {time} {timeTwo} {lenghtOfDay},
+        <div className="twilight-div">
+          <div className="twiligt"> TIME OF SUNRISE 🌞{timeTwo} </div>
+          <div className="twiligt"> TIME OF SUNSET 🌞 {time}</div>
+          <div className="twiligt">
+            {" "}
+            BEGINING OF TWILIGHT 🌝 {civiltwilight}{" "}
+          </div>
+          <div className="twiligt"> END OF TWILIGHT 🌝 {civiltwilightTwo}</div>
+          <div className="twiligt"> LENGTH OF YOUR DAY ✨ {lenghtOfDay} </div>
+        </div>
       </div>
     );
   }

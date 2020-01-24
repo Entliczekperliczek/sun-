@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.bg {
+  /* The image used */
+  background-image: url("https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/83158005_2588039801432869_8811577384332427264_n.jpg?_nc_cat=105&_nc_oc=AQnkMOq5xuqvLvWOmqbUuKBTqu_iqkEAnT2iG5tLEE8wB8f0DB9-bCMYIg8IWNvIezg&_nc_ht=scontent-amt2-1.xx&oh=2c5a07c42514ab50e40a2208c51b1b3f&oe=5ED4E7FA");
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  height: 100vh;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+button {
+  background-color: none;
+  padding: 19px 28px;
+  font-size: 16px;
+  cursor: help;
+  border-color: white;
+  color: blue;
+}
+button:hover {
+  background-color: yellow;
+  color: blue;
+}
+button:focus {
+  background-color: blue;
+  outline: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+title {
+  font-size: px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  color: blue;
+  padding: 10px 6px;
+  font-size: 58px;
+  text-align: center;
+  font-family: ZIGZAG;
+  font-feature-settings: "clig" 0, "titl" 1, "cswh" 1;
+}
+
+.citybuttons {
+  padding: 0px 6px;
+}
+
+.twiligt {
+  color: blue;
+  padding: 18px 6px;
+  font-size: 34px;
+  text-align: left;
+  font-family: ZIGZAG;
+  font-feature-settings: "clig" 0, "liga" 1;
+}
+
+.headertwo {
+  color: blue;
+  padding: 110px 6px;
+  font-size: 80px;
+  text-align: center;
+  font-family: ZIGZAG;
+  font-feature-settings: "clig" 0, "titl" 1, "cswh" 1;
+}
+
+.text {
+  color: blue;
+  padding: 10px 6px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.link {
+  color: blue;
+  font-size: 30px;
+  align-items: center;
+}
+
+.likes {
+  background-color: white;
+  color: blue;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.twilight-div {
+  width: 67vw;
 }
